@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background-color: aqua;
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+textarea {
+    height: 90vh;
+    width: 80%;
+}
+
+.main {
+    padding: 10px;
+    flex-direction:column;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+
+form.new-page-form  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+/*
+^ can be also done like this:
+form.new-page-form  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+*/
+form.new-page-form  div input#submit {
+    align-self:center;
+    width: 100px;
+}
