@@ -49,9 +49,24 @@ def new(request):
      else:
           print("Paji here")
           return render(request ,"encyclopedia/new_page.html")
+     
 def rdom(request):
      r=random.choice(util.list_entries())
      return HttpResponseRedirect(reverse("entry",args=[r]))
+
+def edit(request):
+     if request.method=="POST":
+          title=request.POST.get("title")
+          content=request.POST.get("content")
+          util.save_entry(title,content)
+          return HttpResponseRedirect(reverse("entry",args=[title]))
+     else:
+            title=request.GET.get("title")
+            content=util.get_entry(title,False)
+            return render(request,"encyclopedia/edit.html",{
+                 "title":title,
+                 "content":content,
+            })
 
         
      
