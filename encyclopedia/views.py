@@ -56,7 +56,7 @@ def rdom(request):
 
 def edit(request):
      if request.method=="POST":
-          title=request.POST.get("title")
+          title=request.GET.get("title")    #CHECK THIS OUTTT THE URL PORTIONS ARE ACCESSIBLE ONLY IN GET
           content=request.POST.get("content")
           util.save_entry(title,content)
           return HttpResponseRedirect(reverse("entry",args=[title]))
